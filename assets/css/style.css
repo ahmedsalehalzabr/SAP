@@ -24,6 +24,228 @@
 /*-----------------------------------
     1 - Header
 ------------------------------------*/
+/*-----------------------------------*\
+  #main.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+
+
+
+
+.header .btnee { display: none; }
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:#D3E3FD;
+  color: #0b6c75;
+  padding-block: 20px;
+  z-index: 4;
+}
+header::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.02);
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+}
+
+.header.active {
+  position: fixed;
+  background-color: #26264b;
+  padding-block: 10px;
+  animation: slideIn 500ms ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-open-btnee {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+}
+
+.nav-open-btnee .line {
+  width: 24px;
+  height: 2px;
+  background-color: #4caf50;
+  transition: var(--transition-1);
+}
+
+.nav-open-btn:is(:hover, :focus-visible) .line { background-color: var(--bg-white); }
+
+.nav-open-btn:is(:hover, :focus-visible) .line-1 { transform: scaleX(0.7); }
+
+.nav-open-btn::before { background-color: var(--bg-white); }
+
+.nav-open-btn::after { background-color: var(--bg-black); }
+
+.navbar {
+  position: fixed;
+  background-color: #aaa;
+  top: 0;
+  left: -300px;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  padding: 25px 20px;
+  visibility: hidden;
+  transition: 250ms var(--cubic-in);
+  z-index: 3;
+}
+
+.navbar.active {
+  transform: translateX(300px);
+  visibility: visible;
+  transition: 500ms var(--cubic-out);
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-end: 20px;
+  border-block-end: 1px solid var(--border-smoky-black);
+  margin-block-end: 10px;
+}
+
+.nav-close-btnee {
+  width: 30px;
+  height: 30px;
+  background-color: #aaa;
+  color: var(--text-white);
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.nav-close-btnee ion-icon { --ionicon-stroke-width: 50px; }
+
+.navbar-link {
+  padding: 8px;
+  margin-block-start: 4px;
+}
+
+.navbar-link:is(:hover, :focus-visible) { color: #fff; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #5f888e;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: var(--transition-1);
+}
+
+.overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
+}
+
+
+
+@media (min-width: 992px) {
+
+
+.header .container {
+  margin-inline: 0;
+  min-width: 100%;
+}
+
+.nav-open-btnee,
+.navbar-top { display: none; }
+
+.navbar {
+  all: unset;
+  display: block;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 16px;
+}
+
+.header .btnee { display: flex; }
+
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+  /**
+   * HEADER
+   */
+
+  .header { padding-block: 40px; }
+
+  .header .container { padding-inline: 60px; }
+
+  .navbar-list { gap: 50px; }
+
+
+
+
+}
+
+
+
+
+
+/**
+ * responsive for large than 1400px screen
+ */
+
+@media (min-width: 1400px) {
+
+
+
+  /**
+   * HEADER
+   */
+
+  .header { padding-inline: 90px; }
+
+
+
+
+
+}
+/* 
+
 
 
 header a {
@@ -164,9 +386,22 @@ form button.btn-primary:hover {
   color: #ee1515;
 }
 
+
+@media screen and (max-width: 600px) {
+  header {
+    display: none;
+  }
+} */
 /*-----------------------------------
     1 - Hero
 ------------------------------------*/
+
+@media screen and (max-width: 575px) {
+.hero {
+  margin-top: 100px;
+}
+
+}
 .hero {
   background: url("../images/hero-bg.jpg") no-repeat center;
   background-size: cover;
@@ -205,8 +440,7 @@ form button.btn-primary:hover {
           transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
   padding: 35px 0 35px 30px;
   background-color: rgba(255, 255, 255, 0.51);
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 100px;
+  
   margin-bottom: 0;
 }
 
@@ -405,6 +639,59 @@ form button.btn-primary:hover {
   background-color: #fff;
 }
 
+
+@media screen and (max-width: 600px) {
+
+
+.featured {
+  
+  background-color: #fafafa;
+}
+
+.featured p {
+  margin: 35px 0 53px;
+}
+
+.featured .media i {
+  font-size: 24px;
+  color: #ee1515;
+}
+
+.featured .media h5 {
+  text-transform: uppercase;
+  color: #26264b;
+}
+
+.featured .btn {
+  margin-top: 80px;
+}
+
+.featured-img {
+  position: relative;
+  height: 530px;
+
+  margin-top: 60px;
+}
+
+.featured-big {
+  position: absolute;
+  bottom: 0;
+ 
+  left: 0;
+  width: 300px;
+}
+
+.featured-small {
+  position: absolute;
+  bottom: 0;
+
+  right: 0;
+  width: 200px;
+  padding: 0 0 25px 25px ;
+  background-color: #fff;
+}
+}
+
 /*-----------------------------------
     1 - Recent Posts
 ------------------------------------*/
@@ -966,7 +1253,7 @@ span {
 /*-----------------------------------
     1 - Header
 ------------------------------------*/
-header {
+/*header {
   background-color: rgb(10 35 44);
   color: #b3bdbe;
   z-index: 1000;
@@ -1101,7 +1388,7 @@ form button.btn-primary:hover {
   background-color: #fff;
   color: #ee1515;
 }
-
+*/
 /*-----------------------------------
     1 - Hero
 ------------------------------------*/
@@ -1142,8 +1429,8 @@ form button.btn-primary:hover {
           transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
   padding: 35px 0 35px 30px;
   background-color: rgba(255, 255, 255, 0.51);
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 10px;
+ border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   margin-bottom: 0;
 }
 
@@ -1904,7 +2191,7 @@ span {
 /*-----------------------------------
     1 - Header
 ------------------------------------*/
-header {
+/* header {
   background-color: rgb(211 227 253);
   color: #b3bdbe;
   z-index: 1000;
@@ -2039,7 +2326,7 @@ form button.btn-primary:hover {
   background-color: #fff;
   color: #4caf50;
 }
-
+*/
 /*-----------------------------------
     1 - Hero
 ------------------------------------*/
@@ -2072,16 +2359,16 @@ form button.btn-primary:hover {
   -webkit-transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
   transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
   font-weight: bold;
+  text-align: center;
 }
 
 .hero .slide-content p {
   color: #170936;
   -webkit-transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
           transform: matrix(0.93128, 0, 0, 0.93128, 0, 0);
-  padding: 35px 0 35px 30px;
+  padding:  30px;
   background-color: rgba(255, 255, 255, 0.51);
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 10px;
+  text-align: center;
   margin-bottom: 0;
 }
 
