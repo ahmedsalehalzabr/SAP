@@ -60,7 +60,7 @@ header::after {
 
 .header.active {
   position: fixed;
-  background-color: #26264b;
+  background-color: #A7AEBB;
   padding-block: 10px;
   animation: slideIn 500ms ease-out forwards;
 }
@@ -108,7 +108,7 @@ header::after {
 
 .navbar {
   position: fixed;
-  background-color: #aaa;
+  background-color: #D3E3FD;
   top: 0;
   left: -300px;
   width: 100%;
@@ -135,17 +135,10 @@ header::after {
   margin-block-end: 10px;
 }
 
-.nav-close-btnee {
-  width: 30px;
-  height: 30px;
-  background-color: #aaa;
-  color: var(--text-white);
-  font-size: 2rem;
-  display: grid;
-  place-items: center;
-}
 
-.nav-close-btnee ion-icon { --ionicon-stroke-width: 50px; }
+
+
+
 
 .navbar-link {
   padding: 8px;
@@ -2104,6 +2097,22 @@ span {
   box-shadow: none;
 }
 
+.subscribe-widget textarea {
+  font-size: 14px;
+  padding: 0px 10px;
+ 
+  padding-top: 10px;
+  background-color: #444;
+  border: none;
+  line-height: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-widget textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
 .subscribe-widget button {
   background: #ee1515;
   border: none;
