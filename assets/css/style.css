@@ -60,7 +60,7 @@ header::after {
 
 .header.active {
   position: fixed;
-  background-color: #A7AEBB;
+  background-color: #A7AEBB  ;
   padding-block: 10px;
   animation: slideIn 500ms ease-out forwards;
 }
